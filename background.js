@@ -4,9 +4,10 @@ chrome.contextMenus.create({
 	"contexts":["image"],
 	"onclick":function(info){
 		chrome.tabs.query( {active: true, lastFocusedWindow: true}, function (tabs) {
-			var clipboard = $("<input/>");
-			$("body").append(clipboard);
-			clipboard.val("![LGTM](" + info.srcUrl + ") <br /> :octopus:").select();
+			var clipboard = document.createElement("textarea")
+			clipboard.value = "![LGTM](" + info.srcUrl + ")  \n:octopus:"
+			document.body.appendChild(clipboard)
+			clipboard.select();
 			document.execCommand('copy');
 			clipboard.remove();
 		});
