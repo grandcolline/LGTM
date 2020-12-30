@@ -7,7 +7,7 @@ module.exports = {
     background: path.join(__dirname, "src/background.ts"),
   },
   output: {
-    path: path.join(__dirname, "dist/js"),
+    path: path.join(__dirname, "lgtm/js"),
     filename: "[name].js",
   },
   module: {
