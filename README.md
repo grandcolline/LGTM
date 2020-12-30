@@ -11,7 +11,7 @@
 
 ```bash
 # get module
-$ npm import
+$ npm install
 
 # build
 $ npm run build
