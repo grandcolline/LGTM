@@ -1,16 +1,21 @@
+/**
+ * MarkDownに変更する
+ */
 const makeMd = (url: string): string => "![LGTM](" + url + ")  \n:octopus:";
 
-const clip = (query?: string) => {
-  if (query) {
-    var clipboard = document.createElement("textarea");
-    clipboard.value = makeMd(query);
-    document.body.appendChild(clipboard);
-    clipboard.select();
-    document.execCommand("copy");
-    clipboard.remove();
-  }
+/**
+ * クリップボードにコピーする
+ */
+const copyToClipboard = (text: string) => {
+  const textArea = document.createElement("textarea");
+  document.body.appendChild(textArea);
+  textArea.value = text;
+  textArea.select();
+  document.execCommand("copy");
+  document.body.removeChild(textArea);
 };
 
+// 右クリックメニューに追加
 chrome.runtime.onInstalled.addListener((): void => {
   chrome.contextMenus.create({
     id: "lgtm",
@@ -19,6 +24,9 @@ chrome.runtime.onInstalled.addListener((): void => {
   });
 });
 
+// 処理
 chrome.contextMenus.onClicked.addListener((info, tab): void => {
-  clip(info.srcUrl);
+  if (info.srcUrl) {
+    copyToClipboard(makeMd(info.srcUrl));
+  }
 });
