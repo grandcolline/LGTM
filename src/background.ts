@@ -25,7 +25,7 @@ chrome.runtime.onInstalled.addListener((): void => {
 });
 
 // 処理
-chrome.contextMenus.onClicked.addListener((info, tab): void => {
+chrome.contextMenus.onClicked.addListener((info, _): void => {
   if (info.srcUrl) {
     copyToClipboard(makeMd(info.srcUrl));
   }
