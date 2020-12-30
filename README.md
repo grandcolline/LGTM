@@ -6,3 +6,13 @@
 ```
 ![LGTM](画像パス)  \n:octopus:
 ```
+
+### develop
+
+```bash
+# get module
+$ npm import
+
+# build
+$ npm run build
+```
