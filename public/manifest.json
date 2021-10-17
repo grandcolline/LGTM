@@ -1,0 +1,14 @@
+{
+  "manifest_version": 2,
+  "name": "LGTM",
+  "version": "1.2.0",
+  "description": "この画像でLGTMします.",
+  "permissions": ["contextMenus"],
+  "icons": {
+    "512": "icon.png"
+  },
+  "background": {
+    "scripts": ["js/background.js"],
+	"persistent": false
+  }
+}
