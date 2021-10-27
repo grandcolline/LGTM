@@ -10,3 +10,13 @@ https://chrome.google.com/webstore/detail/lgtm/oeaochpjngmicjifmkoieeamdcladikp
 ```
 ![LGTM](画像パス)  \n:octopus:
 ```
+
+### develop
+
+```bash
+# get module
+$ npm install
+
+# build
+$ npm run build
+```
